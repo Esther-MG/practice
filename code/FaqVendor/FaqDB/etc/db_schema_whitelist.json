@@ -1,0 +1,16 @@
+{
+    "faq": {
+        "column": {
+            "faq_id": true,
+            "customer_id": true,
+            "faq_ques": true,
+            "faq_answ": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FAQ_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
+        }
+    }
+}

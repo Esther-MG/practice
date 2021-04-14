@@ -1,0 +1,20 @@
+<?php
+/** @var \FaqVendor\Faq\Block\FaqList $block */
+$faq = $block->getFaqCollection();
+?>
+<div>
+    <?php foreach ((array)$faq as $item) { ?>
+        <span class="content">
+            <h4 class="title" >
+                <?= $item["faq_ques"]?$item["faq_ques"]:""; ?>
+            </h4>
+            <p class="info">
+                <?php 
+                    $retVal = ($item["faq_answ"] == null) ? "Please wait for an administrator to respond, thanks for asking" : $item["faq_answ"] ;
+                    echo $retVal; 
+                ?>
+            </p>
+        </span>
+
+    <?php } ?>
+</div>
