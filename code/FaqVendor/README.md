@@ -1,5 +1,5 @@
 #Task 1
 
-##En esta tarea encontrarás 2 módulos: 
-- FaqDB en este módulo es la creación de una tabla de preguntas frecuentes y 3 preguntas y respuestas iniciales. 
-- Las preguntas frecuentes en este módulo son el código para generar la lista de preguntas frecuentes y crear una pregunta en la interfaz. 
+##In this task you will find 2 modules: 
+- FaqDB: in this module is the creation of faq table and 3 initial questions and answers.  
+- Faq: in this module are the code to generate the FAQ list and create a question in the frontend.
