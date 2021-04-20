@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Review\Model\Review">
+    <plugin name="Task2_ValidateReview" type="Task2\ValidateReview\Plugin\ValidateDash" sortOrder="10" ></plugin>
+    </type>
+</config>

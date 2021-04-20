@@ -1,0 +1,12 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.x
+
+sd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Task2\ExchangeRate\Block\Index" name="calculation_index"
+
+                   template="Task2_ExchangeRate::calculation.phtml" />
+        </referenceContainer>
+    </body>
+</page>

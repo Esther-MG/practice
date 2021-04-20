@@ -1,0 +1,13 @@
+<?php
+
+$convertion = $block->getConvertData();
+// $api = $block->apiFixer();
+$btn = $block->getBtnData();
+
+$retVal = ($btn == 1) ? "$" : "€" ;
+
+$result = round($convertion, 2);
+
+echo $result." ".$retVal;
+
+?>

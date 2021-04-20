@@ -1,0 +1,99 @@
+<div class="block block-content">
+    <div class="box">
+        <div class="fieldset">
+            <div class="minicart-wrapper" style="bottom: 25px;  right:15px">
+                <div class="content-button">
+                    <h5 style="margin-bottom: 2px; text-align: center; color: #2297F9">Current exchange rate</h5>
+
+                    <form name="form_value" method="POST" id="form_value">
+                        <input type="number" name="numEuro" id="numEuro"  maxlength="5" placeholder="€" 
+                               style="width: 50px;
+                                    height: 22px;"
+                        />
+                        <span >
+                            <button type="submit" name="dollar" id="dollar" class="button-adapted">$</button>
+                        </span>
+                   <!--      <input type="number" name="res" id="res"  placeholder="---" 
+                               style="
+                                    width: 50px;
+                                    height: 22px;"
+                        /> -->  
+                        <span >
+                            <button type="submit" name="euro" id="euro"class="button-adapted">€</button>
+                        </span>
+
+                        <input type="number" name="numDoll" id="numDoll" maxlength="5" placeholder="$" 
+                               style="width: 50px;
+                                    height: 22px;"
+                        />
+                        <h5 style="text-align: center; margin-top: 1px; margin-bottom: 1px; height: 10px;"> 
+                        Result:<div class="result"> </div> </h5>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    require(['jquery'],function(){
+        jQuery(document).ready(function() {
+            jQuery(".result").hide();
+
+            var btnAction;
+            jQuery('#dollar').click(function() {
+                btnAction= 1;
+                return btnAction;
+
+            });
+            jQuery('#euro').click(function() {
+                btnAction= 2;
+                return btnAction;
+
+            });
+
+            jQuery("#form_value").submit(function(){
+
+                var action = btnAction;
+                var numConv;
+
+                 if (action == 1) {
+                     numConv = jQuery("input[name='numEuro']").val();
+                 }
+                    if (action == 2) {
+                     numConv = jQuery("input[name='numDoll']").val();
+                 }
+
+                var url = "<?php echo $block->getBaseUrl().'exchange/result/result/' ?>";
+                jQuery.ajax({
+                    url: url,
+                    type: "POST",
+                    data: {num:numConv,btn:action},
+                    showLoader: true,
+                    cache: false,
+                    success: function(response){
+                        console.log(response.output);
+                        jQuery(".result").show();
+                        jQuery(".result").text(response.output);
+                    }
+                });
+                return false;
+            });
+        });
+    });
+</script>
+
+<style>
+.content-button{
+    display: block;
+}   
+.button-adapted{
+        background: white;
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-bottom: 3px;
+        padding-bottom: 2px;
+        padding-top: 2px;
+        width: 26px;
+        color: #2297F9;
+}
+</style>
